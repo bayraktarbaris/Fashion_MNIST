@@ -92,15 +92,17 @@ Using larger batches allows you to reduce the variance of your weight updates (b
 ### Number of epochs
 If you train so much on the training data,you may get over-fitted model since it memorizes the training set but not generalizes it. To deal with this problem, there is an approach called early stopping(not used in this project). You should stop training when the  error rate of validation data is minimum or when the error rate of training data is below some certain threshold. Consequently, if you increase the number of epochs, you will have an over-fitted model.
 
+We set batch size as 512 and loss as cross-entropy loss. We used Adam optimizer with a learning rate 0.001 and trained the model for 50 epochs.
+
 ## Results
+![Alt text](validation_accuracy_loss.png?raw=true "Title")
+
 | Model  | Test Loss | Test Accuracy |
 | ------------- | ------------ | ------- |
 |1_Layer|0.2559|0.9137|
 |2_Layer|0.2795|0.9205|
 |3_Layer|0.2927|0.9197|
 
-![Alt text](validation_accuracy_loss.png?raw=true "Title")
-
-
 
 ## Discussion
+The increase in validation accuracy shows that our model does not overfit and continues learning since validation data is used to simulate test data. Also, 1_Layer model's accuracy is slightly lower than other two since it has lower learning capacity.
