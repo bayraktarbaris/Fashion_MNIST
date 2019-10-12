@@ -83,10 +83,14 @@ We randomly split the complete data into training and test sets, then perform th
 The model needs to generalize the dataset to predict labels. However, when the model is small, there is not enough parameters to learn the dataset characteristics. In order to get rid of it, we can add more layers to model and by doing that we increase model depth.
 Increasing model depth, increases training time and learning since there are more parameters than small models.
 
-## Learning rate
-Large learning rates result in unstable training and tiny rates result in a failure to train.
-Momentum can accelerate training and learning rate schedules can help to converge the optimization process.
-Adaptive learning rates can accelerate training and alleviate some of the pressure of choosing a learning rate and learning rate schedule.
+### Learning rate
+Large learning rates result in unstable training and tiny rates result in a failure to train. Adaptive learning rates can accelerate training and alleviate some of the pressure of choosing a learning rate and learning rate schedule. If the learning rate is a big number then the optimum point can be missed, whereas if the learning rate is too small then it needs  more step to achieve the optimum point. However, if it misses the optimum point, then it is harder to get optimum point since it takes larger steps.
+
+### Batch size
+Using larger batches allows you to reduce the variance of your weight updates (by taking the average of the gradients in the mini-batch),and this in turn allows you to take biggerstep-sizes, which means the optimization algorithm will make progress faster. However, the amount of work done (in terms ofnumber of gradient computations) to reach a certain accuracy in the  objective will be the same. Low number of batch sizes should be chosen, since accuracy increases and loss drops regularly.
+
+### Number of epochs
+If you train so much on the training data,you may get over-fitted model since it memorizes the training set but not generalizes it. To deal with this problem, there is an approach called early stopping(not used in this project). You should stop training when the  error rate of validation data is minimum or when the error rate of training data is below some certain threshold. Consequently, if you increase the number of epochs, you will have an over-fitted model.
 
 ## Results
 TODO
