@@ -10,6 +10,9 @@ Download Dockerfile from: https://hub.docker.com/r/gaarv/jupyter-keras/dockerfil
 
 Use Docker pull command as: ```docker pull gaarv/jupyter-keras```
 
+Run Docker with: ```docker run -d -v /$(pwd)/:/home/jovyan/work -p 8888:8888 gaarv/jupyter-keras start-notebook.sh --NotebookApp.token=''```
+
+
 ## Models
 ***Model: "1_Layer"***
 
